@@ -1,0 +1,30 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  syn_URL: https://storage.googleapis.com/kaggle-competitions-data/kaggle-v2/51959/5624004/bundle/archive.zip?GoogleAccessId=web-data@kaggle-161607.iam.gserviceaccount.com&Expires=1700065816&Signature=Jj7ru9oWY72OCrjKOJd6uy0x6rDGR9H7N6dE%2BFb50uoJRp3NcUG07aUvmGJMMucsXAUGo5%2BKWbWFxrGBMdVJAbqgeO2TKunBeVKOLaXc2k5S%2FdXrJkmqQOmpxJyXaPfouEmoEGy4PTdm34LTtrdoFZOrE65ZiEBckQC%2FlwvYbxL7cZIwUOjlBr0uApqZZH8tk5ub3WBGTi9H3enA2XJkgQMl0r0kUOlHRMkbgVZZoJ6zqWLcaq3XUiXuslU2slAcdZd9TqQGB5JGbG4kraHK3Mn4vbpb6Y4E8VwtW7pX9SYlpNxR1cbQJFfx1PqPtibxXCQIw7cvxVlZf6DcKAmQ5g%3D%3D&response-content-disposition=attachment%3B+filename%3Dplayground-series-s3e14.zip
+  act_URL: https://storage.googleapis.com/kaggle-data-sets/1490445/2462316/bundle/archive.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20231112%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20231112T163126Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=57d4547b4c5c90643a17566eceb32d838cf07fd0b3d3cb933d62e15bf7376383bd31960b05855fff60510e3330adf69d9d0d834d663774eea7b60714cdb4773c1ede265d0d63211c5544ed7a405e10cbd657b2a7c3980af714639784679a08e1bf5423379afaa1c2ddb6383a8258604c2c2c972e283f0082d07190ca7800f6f72ede65de4104b40e956f86dd0138b19aba95d722e4fd7869001ff7aa6039287b2776d5182c820921efd5c0e83df950aced18575ab27aa4f9ac3fd43bd6a58420aca068d8ca1937071f55bc48dc91dde54c4e28c0173d77a8df09a942085b5a2d0121ad81c499ed8188ba72dc256e699e19f338b3fd7b27097739cad207239b28
+  downloaded_dir: artifacts/data_ingestion/downloaded
+  extracted_dir: artifacts/data_ingestion/extracted
+  file_path_syn: artifacts/data_ingestion/downloaded/blueberry_syn.zip
+  file_path_act: artifacts/data_ingestion/downloaded/blueberry_act.zip
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path_syn: artifacts/data_ingestion/extracted/train.csv
+  data_path_act: artifacts/data_ingestion/extracted/WildBlueberryPollinationSimulationData.csv
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  train_data_path: artifacts/data_transformation/train.csv
+  test_data_path: artifacts/data_transformation/test.csv
+  model_name: trained_models.joblib
+  target: Strength
+
+model_eval:
+  root_dir: artifacts/model_evaluation
+  test_data_path: artifacts/data_transformation/test.csv
+  model_path: artifacts/model_trainer/trained_models.joblib
+  eval_results: artifacts/model_trainer/eval_results.joblib
+  best_params: artifacts/model_trainer/best_params.joblib
+  mlflow_uri: https://dagshub.com/vikramviky123/KAGGLE_PS3E9.mlflow

@@ -1,0 +1,17 @@
+stages:
+  data_ingestion:
+    cmd: python src/blueberry/e_pipeline/stg_01_data_ingestion.py
+    deps:
+      - src/blueberry/e_pipeline/stg_01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/downloaded
+      - artifacts/data_ingestion/extracted
+  data_transformation:
+    cmd: python src/blueberry/e_pipeline/stg_02_data_transformation.py
+    deps:
+      - src/blueberry/e_pipeline/stg_02_data_transformation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/extracted
+    outs:
+      - artifacts/data_transformation
