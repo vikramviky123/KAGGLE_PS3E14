@@ -2,10 +2,10 @@ import os
 import sys
 from pathlib import Path
 
-from concrete_strength import logging, CustomException
-from concrete_strength.b_entity.config_entity import ModelEvalConfig
-from concrete_strength.c_config.configuration import ConfigurationManager
-from concrete_strength.d_components.model_eval import ModelEvaluation
+from blueberry import logging, CustomException
+from blueberry.b_entity.config_entity import ModelEvalConfig
+from blueberry.c_config.configuration import ConfigurationManager
+from blueberry.d_components.model_eval import ModelEvaluation
 
 STAGE_NAME = "MODEL -- EVALUATION -- STAGE"
 

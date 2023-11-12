@@ -38,9 +38,9 @@ import optuna
 from typing import List, Dict, Set
 
 
-from concrete_strength.a_constants import *
-from concrete_strength.f_utils.common import read_yaml
-from concrete_strength.f_utils.common import save_pickle, load_pickle
+from blueberry.a_constants import *
+from blueberry.f_utils.common import read_yaml
+from blueberry.f_utils.common import save_pickle, load_pickle
 
 gparams = read_yaml(GLOBALPARAMS_FILE_PATH).globalparams
 RANDOM_STATE = gparams.RANDOM_STATE

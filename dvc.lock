@@ -5,8 +5,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 8c8711896b450fe85b97ef7a7b1baf9f
-      size: 2649
+      md5: 18f2e27b877ff2046d0364c221aaad69
+      size: 2647
     - path: src/blueberry/e_pipeline/stg_01_data_ingestion.py
       hash: md5
       md5: 7a4abf0b414df270a2059a6b1739bba5
@@ -32,8 +32,8 @@ stages:
       nfiles: 4
     - path: config/config.yaml
       hash: md5
-      md5: 8c8711896b450fe85b97ef7a7b1baf9f
-      size: 2649
+      md5: 18f2e27b877ff2046d0364c221aaad69
+      size: 2647
     - path: src/blueberry/e_pipeline/stg_02_data_transformation.py
       hash: md5
       md5: 09b7a48d75055437a99422588f660e94
@@ -44,3 +44,49 @@ stages:
       md5: 4e67cb4196f132528b065e7a2f9a8ba4.dir
       size: 1784273
       nfiles: 2
+  model_trainer:
+    cmd: python src/blueberry/e_pipeline/stg_03_model_training.py
+    deps:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: 4e67cb4196f132528b065e7a2f9a8ba4.dir
+      size: 1784273
+      nfiles: 2
+    - path: config/config.yaml
+      hash: md5
+      md5: 18f2e27b877ff2046d0364c221aaad69
+      size: 2647
+    - path: src/blueberry/e_pipeline/stg_03_model_training.py
+      hash: md5
+      md5: 284ffcd4f9bc21040214ecc519722cba
+      size: 1219
+    outs:
+    - path: artifacts/model_trainer
+      hash: md5
+      md5: 8464dda9113a318a75aa6d8a45ed06bc.dir
+      size: 43362502
+      nfiles: 3
+    - path: bestparams.yaml
+      hash: md5
+      md5: 5a4862f9f498b032e7e0af0f11bf25ff
+      size: 743
+  model_eval:
+    cmd: python src/blueberry/e_pipeline/stg_04_model_eval.py
+    deps:
+    - path: artifacts/model_trainer
+      hash: md5
+      md5: 8464dda9113a318a75aa6d8a45ed06bc.dir
+      size: 43362502
+      nfiles: 3
+    - path: bestparams.yaml
+      hash: md5
+      md5: 5a4862f9f498b032e7e0af0f11bf25ff
+      size: 743
+    - path: config/config.yaml
+      hash: md5
+      md5: 18f2e27b877ff2046d0364c221aaad69
+      size: 2647
+    - path: src/blueberry/e_pipeline/stg_04_model_eval.py
+      hash: md5
+      md5: c5aebd5262015ce3f7d17c718f39d8cb
+      size: 1063

@@ -7,6 +7,7 @@ stages:
     outs:
       - artifacts/data_ingestion/downloaded
       - artifacts/data_ingestion/extracted
+
   data_transformation:
     cmd: python src/blueberry/e_pipeline/stg_02_data_transformation.py
     deps:
@@ -15,3 +16,21 @@ stages:
       - artifacts/data_ingestion/extracted
     outs:
       - artifacts/data_transformation
+
+  model_trainer:
+    cmd: python src/blueberry/e_pipeline/stg_03_model_training.py
+    deps:
+      - src/blueberry/e_pipeline/stg_03_model_training.py
+      - config/config.yaml
+      - artifacts/data_transformation
+    outs:
+      - artifacts/model_trainer
+      - bestparams.yaml
+
+  model_eval:
+    cmd: python src/blueberry/e_pipeline/stg_04_model_eval.py
+    deps:
+      - src/blueberry/e_pipeline/stg_04_model_eval.py
+      - config/config.yaml
+      - bestparams.yaml
+      - artifacts/model_trainer

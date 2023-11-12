@@ -31,7 +31,7 @@ class ModelEvaluation:
         params_yaml = self.read_params()
         loaded_results = self.read_eval_results()
 
-        # remote_server_uri = "https://dagshub.com/vikramviky123/KAGGLE_PS3E9.mlflow"
+        # remote_server_uri = "https://dagshub.com/vikramviky123/KAGGLE_PS3E14.mlflow"
         mlflow.set_registry_uri(self.eval_config.mlflow_uri)
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
