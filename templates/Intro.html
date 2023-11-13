@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- This is Welcome section ---------------------------------->
+    <h1> Blueberry Yield Prediction</h1>
+    <section id="Intro">
+
+        <h1 class="h-primary"><span>Welcome to Blueberry Yield Prediction</span></h1>
+
+        <p>
+            The dataset for this exercise is a blueberry yield prediction dataset, and our goal is to predict the target variable `yield` based on various components and characteristics of the blueberry plants.
+        </p>
+
+    </section>
+
+    <section id="Intro">
+
+        <h1><span>Context:</span></h1>
+        <p>
+            Blueberry yield prediction is essential for optimizing agricultural practices and ensuring a successful harvest. This dataset encompasses information about different aspects of blueberry cultivation, including plant characteristics and environmental factors. Our objective is to predict the blueberry yield based on these features.
+        </p>
+
+    </section>
+
+    <section id="Intro">
+
+        <p>The dataset includes the following independent variables:</p>
+
+        <h2 class="h-secondary"><span>Independent Variables:</span></h2>
+
+        <ul class="data-list">
+            <li>clonesize&nbsp&nbsp&nbsp&nbsp: Size of the blueberry clone.</li>
+            <li>honeybee&nbsp&nbsp&nbsp&nbsp: Presence of honeybees in the vicinity.</li>
+            <li>bumbles&nbsp&nbsp&nbsp&nbsp: Presence of bumblebees in the vicinity.</li>
+            <li>andrena&nbsp&nbsp&nbsp&nbsp: Presence of andrena bees in the vicinity.</li>
+            <li>osmia&nbsp&nbsp&nbsp&nbsp: Presence of osmia bees in the vicinity.</li>
+            <li>MaxOfUpperTRange&nbsp&nbsp&nbsp&nbsp: Maximum temperature range in the upper atmosphere.</li>
+            <li>MinOfUpperTRange&nbsp&nbsp&nbsp&nbsp: Minimum temperature range in the upper atmosphere.</li>
+            <li>AverageOfUpperTRange&nbsp&nbsp&nbsp&nbsp: Average temperature range in the upper atmosphere.</li>
+            <li>MaxOfLowerTRange&nbsp&nbsp&nbsp&nbsp: Maximum temperature range in the lower atmosphere.</li>
+            <li>MinOfLowerTRange&nbsp&nbsp&nbsp&nbsp: Minimum temperature range in the lower atmosphere.</li>
+            <li>AverageOfLowerTRange&nbsp&nbsp&nbsp&nbsp: Average temperature range in the lower atmosphere.</li>
+            <li>RainingDays&nbsp&nbsp&nbsp&nbsp: Number of days with rain.</li>
+            <li>AverageRainingDays&nbsp&nbsp&nbsp&nbsp: Average number of raining days.</li>
+            <li>fruitset&nbsp&nbsp&nbsp&nbsp: Fruit set in the blueberry plants.</li>
+            <li>fruitmass&nbsp&nbsp&nbsp&nbsp: Mass of the fruits.</li>
+            <li>seeds&nbsp&nbsp&nbsp&nbsp: Number of seeds.</li>
+        </ul>
+
+        <h2 class="h-secondary"><span>Target Variable:</span></h2>
+        <p><strong>yield:</strong> The target variable representing the blueberry yield.</p>
+
+        <h2 class="h-secondary"><span>Metrics:</span></h2>
+        <p>You can evaluate the model using the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html" target="_blank">Mean Absolute Error (MAE)</a> metric.</p>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <!-- This is Welcome section ---------------------------------->
+   <h1>Enter Blueberry Details</h1>
+
+   <form action="/predict" method="post" class="form">
+    <!-- Other form elements... -->
+
+    <div class="form-group">
+    <label for="clonesize">Clone Size:</label>
+    <input type="text" id="clonesize" name="clonesize" placeholder="Clone Size (e.g., 25.0)" value="25.0">
+    </div>
+
+    <div class="form-group">
+        <label for="honeybee">Honeybee Presence:</label>
+        <input type="text" id="honeybee" name="honeybee" placeholder="Honeybee Presence (e.g., 0.5)" value="0.5">
+    </div>
+
+    <div class="form-group">
+        <label for="bumbles">Bumblebee Presence:</label>
+        <input type="text" id="bumbles" name="bumbles" placeholder="Bumblebee Presence (e.g., 0.25)" value="0.25">
+    </div>
+
+    <div class="form-group">
+        <label for="andrena">Andrena Bee Presence:</label>
+        <input type="text" id="andrena" name="andrena" placeholder="Andrena Bee Presence (e.g., 0.38)" value="0.38">
+    </div>
+
+    <div class="form-group">
+        <label for="osmia">Osmia Bee Presence:</label>
+        <input type="text" id="osmia" name="osmia" placeholder="Osmia Bee Presence (e.g., 0.75)" value="0.75">
+    </div>
+
+    <div class="form-group">
+        <label for="MaxOfUpperTRange">Max Upper Temperature Range:</label>
+        <input type="text" id="MaxOfUpperTRange" name="MaxOfUpperTRange" placeholder="Max Upper Temperature Range (e.g., 77.4)" value="77.4">
+    </div>
+
+    <div class="form-group">
+        <label for="MinOfUpperTRange">Min Upper Temperature Range:</label>
+        <input type="text" id="MinOfUpperTRange" name="MinOfUpperTRange" placeholder="Min Upper Temperature Range (e.g., 46.8)" value="46.8">
+    </div>
+
+    <div class="form-group">
+        <label for="AverageOfUpperTRange">Avg Upper Temperature Range:</label>
+        <input type="text" id="AverageOfUpperTRange" name="AverageOfUpperTRange" placeholder="Avg Upper Temperature Range (e.g., 64.7)" value="64.7">
+    </div>
+
+    <div class="form-group">
+        <label for="MaxOfLowerTRange">Max Lower Temperature Range:</label>
+        <input type="text" id="MaxOfLowerTRange" name="MaxOfLowerTRange" placeholder="Max Lower Temperature Range (e.g., 55.8)" value="55.8">
+    </div>
+
+    <div class="form-group">
+        <label for="MinOfLowerTRange">Min Lower Temperature Range:</label>
+        <input type="text" id="MinOfLowerTRange" name="MinOfLowerTRange" placeholder="Min Lower Temperature Range (e.g., 27.0)" value="27.0">
+    </div>
+
+    <div class="form-group">
+        <label for="AverageOfLowerTRange">Avg Lower Temperature Range:</label>
+        <input type="text" id="AverageOfLowerTRange" name="AverageOfLowerTRange" placeholder="Avg Lower Temperature Range (e.g., 45.8)" value="45.8">
+    </div>
+
+    <div class="form-group">
+        <label for="RainingDays">Number of Raining Days:</label>
+        <input type="text" id="RainingDays" name="RainingDays" placeholder="Number of Raining Days (e.g., 24.0)" value="24.0">
+    </div>
+
+    <div class="form-group">
+        <label for="AverageRainingDays">Avg Raining Days:</label>
+        <input type="text" id="AverageRainingDays" name="AverageRainingDays" placeholder="Avg Raining Days (e.g., 0.39)" value="0.39">
+    </div>
+
+    <div class="form-group">
+        <label for="fruitset">Fruit Set:</label>
+        <input type="text" id="fruitset" name="fruitset" placeholder="Fruit Set (e.g., 0.410849)" value="0.410849">
+    </div>
+
+    <div class="form-group">
+        <label for="fruitmass">Fruit Mass:</label>
+        <input type="text" id="fruitmass" name="fruitmass" placeholder="Fruit Mass (e.g., 0.409863)" value="0.409863">
+    </div>
+
+    <div class="form-group">
+        <label for="seeds">Number of Seeds:</label>
+        <input type="text" id="seeds" name="seeds" placeholder="Number of Seeds (e.g., 32.763151)" value="32.763151">
+    </div>
+
+
+    <input type="submit" value="Predict Blueberry Yield">
+</form>
+
+   <div class="result">
+    The Predicted Yield is : <span>{{predicted_blueberry_yield}}</span>
+   </div>
+
+   <div class="error">
+    Error Message: {{error_message}}
+   </div>
+
+{% endblock %}

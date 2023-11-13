@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <!-- This is Welcome section ---------------------------------->
+<div id="uni">
+    <div>
+        <h1>Univariate Analysis</h1>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/yield.jpg') }}" alt="Fixed Acidity Distribution Plot">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/fruitmass.jpg') }}" alt="Volatile Acidity Distribution Plot">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/fruitset.jpg') }}" alt="Citric Acid Distribution Plot">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/seeds.jpg') }}" alt="Residual Sugar Distribution Plot">
+        </div>
+          
+    </div>
+
+   <!-- Summary Section -->
+   <div id="summary">
+       <h2>Summary of Univariate Analysis</h2>
+
+       <div class="summary-section">
+           <h3>Descriptive</h3>
+           <ul>
+               <li>The data has ordinal and continuous data.</li>
+               <li>Strength is in the range of min value = 1500 and max value = 9000.</li>
+               <li>Distributions are skewed.</li>
+           </ul>
+       </div>
+
+       <div class="summary-section">
+           <h3>Univariate</h3>
+           <ul>
+               <li>All distributions are not Normal.</li>
+               <li>Outliers were present and were only mild.</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+{% endblock %}

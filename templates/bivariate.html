@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- This is Welcome section ---------------------------------->
+    <h1>Bivariate Analysis</h1>
+    <h2>Pair Plot</h2>
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/bi_plots/pairplot.jpg') }}" alt="Pair Plot Bivariate Analysis">
+    </div>
+    <br>
+    <h2>Correlation Plot Spearman</h2>
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/bi_plots/Correlation Plot_spearman.jpg') }}" alt="Correlation Plot (Spearman) Bivariate Analysis">
+    </div>
+  
+    <div id="summary">
+        <h2>Summary of Bivariate Analysis</h2>
+    
+    
+        <div class="summary-section">
+            <h3>Blueberry Yield and Plant Characteristics</h3>
+            <ul>
+                <li>yield has strong positive correlation with <strong>fruitset</strong>, <strong>fruitmass</strong>, <strong>seeds</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="summary-section">
+            <h3>Correlation Analysis</h3>
+            <ul>
+                <li><strong>MaxOfUpperTRange</strong>, <strong>MinOfUpperTRange</strong>, <strong>AverageOfUpperTRange</strong>, <strong>MaxOfLowerTRange</strong>, <strong>MinOfLowerTRange</strong> have <strong>100% correlation</strong> among themselves.</li>
+                <li>yield has strong positive correlation with <strong>fruitset</strong>, <strong>fruitmass</strong>, <strong>seeds</strong>.</li>
+                <li>yield has moderate negative correlation with <strong>clonesize</strong>, <strong>honeybee</strong>.</li>
+                <li><strong>clonesize</strong>, <strong>honeybee</strong> have moderate negative correlation with <strong>fruitset</strong>, <strong>fruitmass</strong>, <strong>seeds</strong>, <strong>yield</strong>.</li>
+            </ul>
+        </div>
+
+    </div>
+
+{% endblock %}
