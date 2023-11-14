@@ -106,9 +106,7 @@ I am attaching snapshot of each page
 ![Alt text](image-8.png)
 
 ## Prediction
-![Alt text](image-1.png)
-
-![Alt text](image-2.png)
+![Alt text](image-9.png)
 
 
 ## validating predictions from 3_evaluation_res.ipynb

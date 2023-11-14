@@ -355,17 +355,40 @@ p {
 /* Predict ------ */
 /* CSS for styling the form */
 .form {
-    max-width: 400px;
+
+    width: 65%;
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--accent-color);
+    background-color: rgba(148, 130, 239, 0.419);
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
 }
 
-.form-group {
-    margin: 10px 0;
+.form-columns {
+    display: flex;
+    justify-content: space-between;
+
 }
+
+.form-column {
+    flex: 1;
+    margin-right: 10px;
+    /* Adjust as needed to create space between columns */
+}
+
+.form-group {
+    margin-bottom: 5px;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-size: 20px;
+
+
+    /* Adjust as needed to create space between input groups */
+}
+
+/* .form-group {
+    margin: 10px 0;
+} */
 
 .form label {
     display: block;
